@@ -1,0 +1,39 @@
+{% extends 'registration/base.html' %}
+{% block content %}
+    <center>
+        {% comment %}
+            The form shows all fields with their validations
+            {{form}}
+        {% endcomment %}
+        <br><br><br><br>
+        <h3>Welcome Guest. Please Signup to continue</h3>
+        <form action="{% url 'registration:signup' %}" method="POSt">
+            {% csrf_token %}
+            <div>
+                <label for="username">Username: </label>
+                <br>
+                {{ form.username }}
+            </div>
+            <br>
+            <div>
+                <label for="username">Email: </label>
+                <br>
+                {{ form.email }}
+            </div>
+            <br>
+            <div>
+                <label for="username">Password: </label>
+                <br>
+                {{ form.password1 }}
+            </div>
+            <br>
+            <div>
+                <label for="username">Confirm Password: </label>
+                <br>
+                {{ form.password2 }}
+            </div>
+            <br>
+            <button type="submit">Signup</button>
+        </form>
+    </center>
+{% endblock %} 
